@@ -77,12 +77,15 @@ of samples in the leaf node of each tree.
 ## Model Deployment
 
 To deploy the best model found by AutoML we use the AzureML Endpoint. The best model is deployed following this steps:
-    1. Register the model and download its artifacts
-    2. Create an environment with all required dependencies using the artifacts provided by AutoML
-    3. Define the configurations of the WebService, i.e. number of CPUs and memory size
-    4. Deploy the model with the previously created configurations
-    5. Enable app insights to debug and analyze the behaviour of the endpoint
-   
+
+1. Register the model and download its artifacts
+2. Create an environment with all required dependencies using the artifacts provided by AutoML
+3. Define the configurations of the WebService, i.e. number of CPUs and memory size
+4. Deploy the model with the previously created configurations
+5. Enable app insights to debug and analyze the behaviour of the endpoint
+
+![deployed_model](./screenshots/deployed_model.png)
+
 In order to query and consume the endpoint we have to make a request with a JSON body where the `data` field is the dictionary representation of the data point
 to predict
 ```
